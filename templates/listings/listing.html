@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+
+ 
+  <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{% url 'listings' %}">Projects</a>
+          </li>
+          <li class="breadcrumb-item active">{{listing.title}}</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+
+
+
+  <!-- Listing -->
+  <section id="listing" class="py-4">
+    <div class="container">
+      <a href="{%url 'listings'%}" class="btn btn-dark mb-4">Back To Projects</a>
+      <div class="row">
+        <div class="col-md-9">
+          <!-- Home Main Image -->
+          <img src="{{ listing.photo_main.url }}" alt="" style="width:800px;height:450px;" class="img-main img-fluid mb-3">         
+          <!-- Thumbnails -->
+          <div class="row mb-5 thumbs">
+          	{% if listing.photo_1 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_1.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_1.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}
+            {% if listing.photo_2 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_2.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_2.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}
+            {% if listing.photo_3 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_3.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_3.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}
+            {% if listing.photo_4 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_4.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_4.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}
+            {% if listing.photo_5 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_5.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_5.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}
+            {% if listing.photo_6 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_6.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_6.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_7 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_7.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_7.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_8 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_8.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_8.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_9 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_9.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_9.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_10 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_10.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_10.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_11 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_11.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_11.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_12 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_12.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_12.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_13 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_13.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_13.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_14 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_14.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_14.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+            {% if listing.photo_15 %}
+            <div class="col-md-2">
+              <a href="{{ listing.photo_15.url }}" data-lightbox="home-images">
+                <img src="{{ listing.photo_15.url }}" alt="" class="img-fluid">
+              </a>
+            </div>
+            {% endif %}           
+          </div>
+
+
+
+
+          <!-- Fields -->
+          <div class="row mb-5 fields">
+            <div class="col-md-12">
+              <h2 class="card-title">{{listing.title}}</h2>              
+            </div>
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-secondary"></li>
+                <li class="list-group-item text-secondary">                  
+                  Project Delivered Date:                  
+                  <span class="float-right">{{listing.list_date}}</span>
+                </li>
+                <li class="list-group-item text-secondary">                  
+                  Project Category:
+                  <span class="float-right">{{listing.category}}</span>
+                </li>
+                <li class="list-group-item text-secondary">                  
+                  Languages:
+                  <span class="float-right">{{listing.language}}</span>
+                </li>
+                <li class="list-group-item text-secondary">                  
+                  Framework:
+                  <span class="float-right">{{listing.framework}}
+                  </span>
+                </li>
+                <li class="list-group-item text-secondary">                  
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-- Description -->
+          <div class="row mb-5">
+            <div class="col-md-12">
+              <h5 class="card-title">Project Description:</h5>
+              {{listing.description}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-3">           
+            <div class="card-body">
+              <h5 class="card-title">Feature Detail:</h5>
+              <h6 class="text-secondary">{{listing.features}}</h6>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
